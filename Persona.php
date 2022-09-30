@@ -85,6 +85,8 @@ class Persona
     {
         $this->edad = $edad;
     }
+
+    //FUNCIONES
     public function hablar($persona){
         return print("Soy ".$persona->getNombre()." y estoy hablando");
     }

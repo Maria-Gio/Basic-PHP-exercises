@@ -1,8 +1,8 @@
 <?php
 class Informatico extends Persona
 {
-    public $lenguajes;
-    public $experienciaProgramador;
+    private $lenguajes;
+    private $experienciaProgramador;
 
     function __construct($nombre, $apellido, $altura, $edad, $lenguajes, $experienciaProgramador)
     {
@@ -66,6 +66,8 @@ class Informatico extends Persona
     {
         $this->experienciaProgramador = $experienciaProgramador;
     }
+
+    //FUNCIONES
     public function programar($informatico)
     {
         return print("Soy " . $informatico->getNombre() . " y estoy programando");
