@@ -10,7 +10,7 @@ class Coche
 
 
 
-    public function __construct($color, $marca, $modelo, $velocidad, $caballaje, $plazas)
+    function __construct($color, $marca, $modelo, $velocidad, $caballaje, $plazas)
     {
         $this->color = $color;
         $this->marca = $marca;
@@ -35,7 +35,6 @@ class Coche
     public function setColor($color)
     {
         $this->color = $color;
-
     }
 
 
@@ -55,8 +54,6 @@ class Coche
     public function setMarca($marca)
     {
         $this->marca = $marca;
-
-
     }
 
     /**
@@ -75,7 +72,6 @@ class Coche
     public function setModelo($modelo)
     {
         $this->modelo = $modelo;
-
     }
 
     /**
@@ -94,7 +90,6 @@ class Coche
     public function setVelocidad($velocidad)
     {
         $this->velocidad = $velocidad;
-
     }
 
     /**
@@ -113,8 +108,6 @@ class Coche
     public function setCaballaje($caballaje)
     {
         $this->caballaje = $caballaje;
-
-
     }
 
     /**
@@ -133,27 +126,42 @@ class Coche
     public function setPlazas($plazas)
     {
         $this->plazas = $plazas;
-
     }
     //FUNCIONES
+    /**
+     * Metodo que incrementa la velocidad en 1
+     */
     public function acelerar()
     {
         $this->velocidad++;
-
     }
+    /**
+     * Metodo que disminuye la velocidad en 1
+     */
     public function frenar()
     {
         $this->velocidad--;
-
     }
+    /**
+     * Metodo que muestra la velocidad del coche
+     *      
+     * */
     public function velocimetro()
     {
-
         return print("La velocidad es de; " . $this->velocidad);
     }
+    /**
+     * Metodo que muestra toda la informacion del coche
+     */
     public function muestraCoche($coche)
     {
-        return print("Hola, soy :" . $coche->getName() . ", soy un: " . $coche->getMarca() . ", con modelo: " . $coche->getModelo() . " , tengo una velocidad de: " . $coche->getVelocidad() . " mi cabellaje es de: ".$coche->getCaballaje()." y tengo : ".$coche->getPlazas()." plazas.");
-        //$color,$marca,$modelo,$velocidad,$caballaje,$plazas;
+        $x = false;
+        if ($coche instanceof Coche && !empty($coche)){
+            $x = true;
+            echo ("Falso, no es coche o esta vacio");
+        }//else{
+         //   return print("Hola, soy un: " . $coche->getMarca() . ", con modelo: " . $coche->getModelo() . " , tengo una velocidad de: " . $coche->getVelocidad() . " mi caballaje es de: " . $coche->getCaballaje() . " y tengo : " . $coche->getPlazas() . " plazas.");
+        //}
     }
-}
+} 
+?>
